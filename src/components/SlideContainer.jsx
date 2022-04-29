@@ -21,7 +21,7 @@ const SlideContainer = ({ products, check, turnOffSideBar }) => {
   const scroll = (scrollOffset) => {
     ref.current.scrollLeft += scrollOffset;
   };
-  // console.log(ref);
+  console.log(ref);
 
   useEffect(() => {
     setTimeout(() => {
