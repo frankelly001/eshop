@@ -1,0 +1,308 @@
+/*
+0 - 600PX: Phone
+600 - 900px: Tablet  portrait
+900 - 1200px: Tablet landscspe
+[1200 - 1000px]: is where our normal styles apply
+1000px + :  Big desktop
+*/
+/*
+$breakpoint argument choices:
+-phone
+-tab-port
+-tab-land
+-big-desktop
+
+1em = 16px
+*/
+.slide_container {
+  border-radius: 2rem;
+  border: 0.2rem #F4F2F4 solid;
+  position: relative;
+}
+
+.slide_container-content {
+  overflow-x: scroll;
+  white-space: nowrap;
+  scrollbar-width: none;
+  scroll-behavior: smooth;
+  padding: 1rem;
+}
+
+.slide_container-content::-webkit-scrollbar {
+  -webkit-appearance: none;
+  display: none;
+  scroll-behavior: smooth;
+}
+
+.slide_container-content .slide_product {
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  display: inline-block;
+  width: 9vw;
+  width: 120px;
+  padding: 0.3rem;
+  display: inline-block;
+}
+
+@media only screen and (max-width: 1000px) {
+  .slide_container-content .slide_product {
+    width: 14vw;
+    width: 100px;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .slide_container-content .slide_product {
+    width: 22vw;
+    width: 80px;
+  }
+}
+
+.slide_container-content .slide_product:hover {
+  border-radius: 1rem;
+  -webkit-box-shadow: 0 10px 20px rgba(32, 30, 30, 0.2);
+          box-shadow: 0 10px 20px rgba(32, 30, 30, 0.2);
+}
+
+.slide_container-content .slide_product:not(:last-child) {
+  margin-right: 1rem;
+}
+
+.slide_container-content .slide_product-img {
+  width: auto;
+  height: 9vw;
+  height: 120px;
+  position: relative;
+}
+
+@media only screen and (max-width: 1000px) {
+  .slide_container-content .slide_product-img {
+    height: 100px;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .slide_container-content .slide_product-img {
+    height: 80px;
+  }
+}
+
+.slide_container-content .slide_product-img:hover {
+  -webkit-transform: translateY(-2px);
+          transform: translateY(-2px);
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.slide_container-content .slide_product-img:hover .doubletab {
+  visibility: unset;
+}
+
+.slide_container-content .slide_product-img img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: fill;
+     object-fit: fill;
+}
+
+.slide_container-content .slide_product .doubletab {
+  position: absolute;
+  top: 0;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 700;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.219);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  cursor: pointer;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  visibility: hidden;
+  text-shadow: #000 0px 0px 5px;
+}
+
+@media only screen and (max-width: 800px) {
+  .slide_container-content .slide_product .doubletab {
+    display: none;
+  }
+}
+
+.slide_container-content .slide_product .doubletab_label {
+  margin-bottom: 1rem;
+}
+
+.slide_container-content .slide_product .doubletab i {
+  -webkit-animation: doubletab 1s ease-out 2s infinite;
+          animation: doubletab 1s ease-out 2s infinite;
+}
+
+.slide_container-content .slide_product-details {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  place-items: center;
+}
+
+.slide_container-content .slide_product-details h3 {
+  display: block;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  font-size: 1.3rem;
+  font-weight: 600;
+  text-align: center;
+  text-overflow: ellipsis;
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.slide_container-content .slide_product-details p {
+  font-size: 1.5rem;
+  color: #7c7474;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.slide_container-content .slide_product-details .add {
+  border: none;
+  background-image: -webkit-gradient(linear, left top, right bottom, from(#5D05B5), to(#dc3545));
+  background-image: linear-gradient(to right bottom, #5D05B5, #dc3545);
+  padding: 0.8rem 1rem;
+  border-radius: 2rem;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  font-weight: 800;
+  color: #fff;
+  -webkit-box-shadow: 0 5px 10px rgba(32, 30, 30, 0.2);
+          box-shadow: 0 5px 10px rgba(32, 30, 30, 0.2);
+}
+
+@media only screen and (max-width: 800px) {
+  .slide_container-content .slide_product-details .add {
+    width: 100%;
+  }
+}
+
+.slide_container-content .slide_product-details .add:hover {
+  -webkit-transform: translateY(-2px);
+          transform: translateY(-2px);
+  -webkit-box-shadow: 0 10px 30px rgba(32, 30, 30, 0.2);
+          box-shadow: 0 10px 30px rgba(32, 30, 30, 0.2);
+  cursor: pointer;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+}
+
+.slide_container-content .slide_product-details .add:active {
+  outline: none;
+  -webkit-transform: translateY(0px);
+          transform: translateY(0px);
+  -webkit-box-shadow: 0 5px 15px rgba(32, 30, 30, 0.2);
+          box-shadow: 0 5px 15px rgba(32, 30, 30, 0.2);
+}
+
+@media only screen and (max-width: 800px) {
+  .slide_container .scroll_btn {
+    display: none;
+  }
+}
+
+.slide_container .direction {
+  position: absolute;
+  background-color: #7c74748c;
+  border-radius: 50%;
+  top: 40%;
+  border: none;
+  width: 3.5rem;
+  height: 3.5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  font-size: 1rem;
+  color: #fff;
+}
+
+.slide_container .direction:hover {
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  background-color: #7c7474;
+}
+
+.slide_container .direction-left {
+  left: 0.3rem;
+}
+
+.slide_container .direction-right {
+  right: 0.3rem;
+}
+
+@-webkit-keyframes doubletab {
+  0% {
+    -webkit-transform: scale(2);
+            transform: scale(2);
+  }
+  10% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  30% {
+    -webkit-transform: scale(1.5);
+            transform: scale(1.5);
+  }
+  50% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  100% {
+    -webkit-transform: scale(2.3);
+            transform: scale(2.3);
+  }
+}
+
+@keyframes doubletab {
+  0% {
+    -webkit-transform: scale(2);
+            transform: scale(2);
+  }
+  10% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  30% {
+    -webkit-transform: scale(1.5);
+            transform: scale(1.5);
+  }
+  50% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  100% {
+    -webkit-transform: scale(2.3);
+            transform: scale(2.3);
+  }
+}
+/*# sourceMappingURL=slidecontainer.css.map */

@@ -1,0 +1,136 @@
+@import "../abstracts/variables/variables.scss";
+@import "../abstracts/mixins/mixins.scss";
+
+// .lg {
+//     width: 100%;
+// }
+
+// .md {
+//     width: 70%;
+// }
+
+// .sm {
+//     width: 50%;
+// }
+
+.plus_minus-btn {
+    display: flex;
+    // max-width: 100%;
+
+    button {
+        border: none;
+        color: $color-white;
+        background-image: $background-image-active-rb;
+        padding: 1.5rem;
+        // width: 15%;
+        display: grid;
+        place-items: center;
+
+        // @include respond(phone-lg) {
+        //     width: 5rem;
+        //     padding: .5rem;
+        // }
+    }
+
+    input {
+        // width: 23rem;
+        width: 100%;
+        border: none;
+        border: solid .3rem;
+        border-image: $border-image;
+        text-align: center;
+        outline: none;
+        padding: .9rem;
+        // width: 25rem;
+        font-size: 2rem;
+
+
+        // @include respond(phone-lg) {
+        //     width: rem;
+        // }
+    }
+
+    .remove {
+        border-radius: 2rem 0 0 2rem;
+        // display: none;
+    }
+
+    .add {
+        border-radius: 0 2rem 2rem 0;
+        // display: none;
+    }
+
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// .input_field {
+//     display: flex;
+
+//     button {
+//         border: none;
+//         color: $color-white;
+//         background-image: $background-image-active-rb;
+//         padding: 1.5rem;
+
+//         // @include respond(phone-lg) {
+//         //     width: 5rem;
+//         //     padding: .5rem;
+//         // }
+//     }
+
+//     input {
+//         width: 40%;
+//         border: none;
+//         border: solid .3rem;
+//         border-image: $border-image;
+//         text-align: center;
+//         outline: none;
+//         padding: .9rem;
+//         width: 25rem;
+//         font-size: 2rem;
+
+
+//         // @include respond(phone-lg) {
+//         //     width: rem;
+//         // }
+//     }
+
+//     .remove {
+//         border-radius: 2rem 0 0 2rem;
+//         // display: none;
+//     }
+
+//     .add {
+//         border-radius: 0 2rem 2rem 0;
+//         // display: none;
+//     }
+
+    
+// }

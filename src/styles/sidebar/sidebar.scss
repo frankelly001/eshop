@@ -1,0 +1,152 @@
+@import "../abstracts/variables/variables.scss";
+@import "../abstracts/mixins/mixins.scss";
+
+
+
+.sidebar {
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 0;
+  position: absolute;
+  height: 100vh;
+  overflow-x: hidden;
+  opacity: 9;
+  transition: .2s;
+  z-index: 999;
+  
+  &_container {
+    position: absolute;
+    background-color: $color-white;
+    // background-color: greenyellow;
+    width: 100%;
+    height: 100vh;
+    padding: 5rem 2rem;
+    flex-wrap: nowrap;
+    overflow: auto;
+    z-index: 999;
+
+    @include respond(phone-lg) {
+      padding: 5rem 1.5rem;
+    }
+
+
+    &-closebtn {
+      display: flex;
+      justify-content: flex-end;
+      margin-top: -2rem;
+      // z-index: 999;
+
+      button {
+        border: none;
+        background-image: $background-image-active-rb;
+        width: 3.5rem;
+        height: 3.5rem;
+        border-radius: 10rem;
+        font-size: 2rem;
+        color: $color-white;
+      }
+    }
+
+    .saved {
+      margin-top: 3rem;
+
+      &_header {
+        font-size: 2rem;
+        font-weight: 600;
+        margin-bottom: 1rem;
+      }
+    }
+  }
+  // .side_view {
+  //   position: fixed;
+  //   height: 100%;
+  //   width: 0%;
+  //   right: 0;
+  //   transition: 0.2s;
+
+  // }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// .side_bar {
+//   top: 0;
+//   left: 0;
+//   right: 0;
+//   bottom: 0;
+//   width: 0;
+//   position: absolute;
+//   height: 100vh;
+//   overflow-x: hidden;
+//   opacity: 9;
+//   // transition: .5s;
+
+//   .empty_bg {
+//     width: 100%;
+//     height: 100%;
+//     position: absolute;
+//     background-color: $color-black;
+//     opacity: .5;
+//   }
+
+//   .side_view {
+//     position: fixed;
+//     height: 100%;
+//     width: 0%;
+//     right: 0;
+//     transition: 0.2s;
+
+//     .sidebar_container {
+//       background-color: $color-white;
+//       width: 100%;
+//       height: 100vh;
+//       padding: 5rem 2rem;
+//       flex-wrap: nowrap;
+//       overflow: auto;
+
+//       &-closebtn {
+//         display: flex;
+//         justify-content: flex-end;
+//         margin-top: -2rem;
+
+//         button {
+//           border: none;
+//           background-image: $background-image-active-rb;
+//           width: 3.5rem;
+//           height: 3.5rem;
+//           border-radius: 10rem;
+//           font-size: 2rem;
+//           color: $color-white;
+//         }
+//       }
+
+//       .saved {
+//         margin-top: 3rem;
+
+//         &_header {
+//           font-size: 2rem;
+//           font-weight: 600;
+//           margin-bottom: 1rem;
+//         }
+//       }
+//     }
+//   }
+// }

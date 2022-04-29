@@ -1,0 +1,316 @@
+@import "../abstracts/variables/variables.scss";
+@import "../abstracts/mixins/mixins.scss";
+
+.checkout_pay {
+    background-color: $color-grey-light;
+    padding: 2rem 0;
+    // align-self: center;
+    margin-top: auto;
+    margin-bottom: auto;
+
+    &-container {
+        display: grid;
+        grid-row-gap: 2.5rem;
+        padding: 3rem 40rem;
+
+
+        @include respond(tab-land) {
+            padding: 3rem 30rem;
+        }
+
+        @include respond(tab-port) {
+            padding: 3rem 20rem;
+        }
+
+        @include respond(phone-lg) {
+            padding: 3rem 10rem;
+        }
+
+        @include respond(phone-md) {
+            padding: 3rem;
+        }
+        
+        .checkout_pay-content {
+            width: 100%;
+            // background-color: red;
+
+            .details-title {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 0 2rem;
+                margin-bottom: 1rem;
+                text-transform: uppercase;
+
+                h3 {
+                    font-size: 1.5rem;
+                    color: $color-grey-dark-4;
+                }
+
+                p {
+                    font-size: 1.5rem;
+                    color: $color-purple;
+                    font-weight: 500;
+                    cursor: pointer;
+                }
+            }
+
+            .details_content {
+                // border: .1rem solid #000;
+                padding: 2rem;
+                background-color: $color-white;
+                border-radius: 1rem;
+                display: flex;
+                flex-direction: column;
+
+                p {
+                    font-size: 1.8rem;
+                }
+
+                .change {
+                    font-size: 1.8rem;
+                    text-decoration: none;
+                    text-align: end;
+                    font-weight: 700;
+                    color: $color-purple;
+                    cursor: pointer;
+                }
+            }
+
+            .flex_row {
+                flex-direction: row;
+                justify-content: space-between;
+
+                p {
+                    font-size: 2.3rem;
+                    font-weight: 600;
+                    text-transform: uppercase;
+                }
+
+                .price {
+                    color: $color-grey-dark-3;
+                }
+            }
+        }
+
+        .paynow {
+            padding: 1rem 3rem;
+            width: fit-content;
+            white-space: nowrap;
+            border: none;
+            border-radius: 2rem;
+            background-image: $background-image-active-rb;
+            justify-self: center;
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: $color-white;
+            text-transform: uppercase;
+            line-height: 1.5;
+
+            &:hover {
+                transform: translateY(-3px);
+            }
+        }
+
+        .policy {
+            font-size: 1.5rem;
+            font-weight: 400;
+            text-align: center;
+
+            span {
+                font-weight: 500;
+                color: $color-purple;
+            }
+        }
+           
+        
+            .view_details {
+                background: $color-white;
+                width: 60%;
+                max-height: 80%;
+                overflow-y: auto;
+                position: fixed;
+                z-index: 99999;
+                top: 10%;
+                left: 20%;
+                border-radius: 2rem;
+                display: none;
+
+                @include respond(phone-lg) {
+                    width: 80%;
+                    left: 10%;
+                }
+
+                @include respond(phone-md) {
+                    width: 90%;
+                    left: 5%;
+                }
+                
+                .view_header {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    padding: 1.5rem;
+                    position: sticky;
+                    top: 0;
+                    color: $color-white;
+                    background-image: $background-image-active-rb;
+                    // border-bottom: .2rem solid #000;
+
+                    @include respond(phone-lg) {
+                        padding: 1rem;
+                    }
+        
+                    h3 {
+                        font-size: 2.3rem;
+                        font-weight: 600;
+
+                        @include respond(phone-lg) {
+                            font-size: 2rem;
+                        }
+                    }
+        
+                    i {
+                        font-size: 2.5rem;
+                    }
+        
+                }
+        
+                
+                .details {
+                    &_header {
+                        font-size: 1.5rem;
+                        font-weight: 700;
+                        padding: 1rem 1.5rem;
+                        background-color: $color-grey-light;
+                        color: $color-grey-dark-4;
+                    }
+                    
+                    .details_container {
+                        padding: 0rem 1.5rem;
+                        .content {
+                            padding: 1rem 0rem;
+                            display: flex;
+                            justify-content: space-between;
+                            align-items: center;
+                            column-gap: 10rem;
+                            // background-color: #5d05b5;
+            
+                            &_description-1 {
+                                // background-color: #dc3545;
+                                h4 {
+                                    font-size: 1.6rem;
+                                    font-weight: 500;
+                                }
+                
+                                p {
+                                    font-size: 1.5rem;
+                                    color: $color-grey-dark-3;
+                                }
+                            }
+            
+                            &_description-2 {
+                                // background-color: yellow;
+                                font-size: 1.5rem;
+                                font-weight: 600;
+                                display: flex;
+                                flex-direction: column;
+
+                                h3 {
+                                    text-align: end;
+                                    font-size: 1.2rem;
+                                     font-weight: 500;
+                                    color: $color-grey-dark-4;
+                                }
+                            }
+            
+                            &:not(:last-child) {
+                                border-bottom: 1px solid $color-grey-dark-4;
+                            }
+                        }
+                    }
+                }
+        
+                .sub_details {
+                    
+                    &-header {
+                        font-size: 1.5rem;
+                        font-weight: 700;
+                        padding: 1rem 1.5rem;
+                        background-color: $color-grey-light;
+                        color: $color-grey-dark-4;
+                    }
+                    
+                    .d-flex {
+                        padding: .5rem 1.5rem;
+                        display: flex;
+                        justify-content: space-between;
+        
+                        h4 {
+                            font-size: 1.6rem;
+                            font-weight: 500;
+                        }
+        
+                        p {
+                            font-size: 1.5rem;
+                            font-weight: 600;
+                        }
+                    }
+                }
+        
+                .details_summary {
+                    display: flex;
+                    justify-content: space-between;
+                    padding: 1rem 1.5rem;
+                    // background-color: $color-white;
+                    // position: -webkit-sticky;
+                    position: sticky;
+                    bottom: 0;
+                    color: $color-white;
+                    background-image: $background-image-active-rb;
+        
+                    h3 {
+                        font-size: 2rem;
+                        font-weight: 600;
+
+                        @include respond(phone-lg) {
+                            font-size: 1.8rem;
+                        }
+                    }
+        
+                    p {
+                        font-size: 2rem;
+                        font-weight: 600;
+                    }
+                }
+            }
+        // }
+
+    }
+
+    .pls_note {
+        padding: 0 30rem;
+
+        @include respond(tab-land) {
+            padding: 0 20rem;
+        }
+
+        @include respond(phone-lg) {
+            padding: 0 10rem;
+        }
+
+        @include respond(phone-md) {
+            padding: 0 5rem;
+        }
+        
+        p {
+            font-size: 1.5rem;
+            text-align: center;
+
+            span {
+                font-weight: 500;
+                color: $color-purple;
+            }
+        }
+    }
+}

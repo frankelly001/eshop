@@ -1,0 +1,68 @@
+/*
+0 - 600PX: Phone
+600 - 900px: Tablet  portrait
+900 - 1200px: Tablet landscspe
+[1200 - 1000px]: is where our normal styles apply
+1000px + :  Big desktop
+*/
+/*
+$breakpoint argument choices:
+-phone
+-tab-port
+-tab-land
+-big-desktop
+
+1em = 16px
+*/
+.loader {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-color: #fff;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  z-index: 50;
+}
+
+.loader i {
+  font-size: 5rem;
+  margin-top: 10rem;
+  color: #b5057a;
+  -webkit-animation: rotate 1.5s infinite linear;
+          animation: rotate 1.5s infinite linear;
+}
+
+@-webkit-keyframes rotate {
+  0% {
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@keyframes rotate {
+  0% {
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+/*# sourceMappingURL=renderloader.css.map */

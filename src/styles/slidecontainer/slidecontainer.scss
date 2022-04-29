@@ -1,0 +1,257 @@
+@import "../abstracts/variables/variables.scss";
+@import "../abstracts/mixins/mixins.scss";
+
+.slide {
+  &_container {
+    border-radius: 2rem;
+    border: 0.2rem $color-grey-light solid;
+    position: relative;
+    
+    &-content {
+      // background-color: yellow;
+      overflow-x: scroll;
+      white-space: nowrap;
+      scrollbar-width: none;
+      scroll-behavior: smooth;
+      // padding: 1.8rem;
+      padding: 1rem;
+    
+      &::-webkit-scrollbar {
+        -webkit-appearance: none;
+        display: none;
+        scroll-behavior: smooth;
+      }
+
+      .slide_product {
+        // background-color: blue;
+        flex-shrink: 0;
+        display: inline-block;
+        // min-width: 85px;
+        // max-width: 9vw;
+        width: 9vw;
+        width: 120px;
+        padding: 0.3rem;
+        display: inline-block;
+        // background: $color-white;
+
+        // @include respond(tab-land) {
+        //   width: 11vw;
+        // }
+        
+        // @include respond(tab-port) {
+        //   grid-template-columns: repeat(auto-fill, 20vw);
+        // }
+    
+        @include respond(tab-port) {
+          width: 14vw;
+          width: 100px;
+        }
+    
+        @include respond(phone-md) {
+          width: 22vw;
+          width: 80px;
+        }
+        
+        
+        
+        &:hover {
+          border-radius: 1rem;
+          box-shadow: 0 10px 20px $shadow-dark;
+          // transform: scale(1.17);
+          // transform: scale(1.1);
+          
+        }
+        
+        &:not(:last-child) {
+          margin-right: 1rem;
+        }
+        
+        &-img {
+          width: auto;
+          height: 9vw;
+          height: 120px;
+          position: relative;
+          // background-color: red;
+          // padding: 2rem;
+
+          @include respond (tab-land) {
+          //   height: 11vw;
+          }
+
+          @include respond (tab-port) {
+            // height: 14vw;
+            height: 100px;
+          }
+
+          // @include respond(phone-md) {
+          //   height: 20vw;
+          // }
+      
+          @include respond(phone-md) {
+            height: 80px;
+          }
+
+          &:hover {
+            transform: translateY(-2px);
+            transition: 0.5s;
+
+            .doubletab {
+              visibility: unset;
+            }
+          }
+
+          img {
+            width: 100%;
+            height: 100%;
+            object-fit: fill;
+          }
+        }
+
+        .doubletab {
+          position: absolute;
+          top: 0;
+          color: $color-white;
+          font-size: 1rem;
+          font-weight: 700;
+          width: 100%;
+          height: 100%;
+          background-color: rgba(255, 255, 255, 0.219);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          cursor: pointer;
+          flex-direction: column;
+          visibility: hidden;
+          text-shadow: #000 0px 0px 5px;
+
+          @include respond(phone-lg) {
+            display: none;
+          }
+          
+          &_label {
+            margin-bottom: 1rem;
+          }
+          
+          i {
+            animation: doubletab 1s ease-out 2s infinite;
+          }
+        }
+
+        &-details {
+          // padding: 1rem;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          place-items: center;
+
+          h3 {
+            display: block;
+            flex-wrap: wrap;
+            font-size: 1.3rem;
+            font-weight: 600;
+            text-align: center;
+            text-overflow: ellipsis;
+            width: 100%;
+            overflow: hidden;
+            white-space: nowrap;
+          }
+
+          p {
+            font-size: 1.5rem;
+            color: $color-grey-dark-2;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+          }
+
+          .add {
+            // width: 100%;
+            border: none;
+            background-image: $background-image-active-rb;
+            padding: 0.8rem 1rem;
+            border-radius: 2rem;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            font-weight: 800;
+            color: $color-white;
+            box-shadow: 0 5px 10px $shadow-dark;
+
+            @include respond(phone-lg) {
+              width: 100%;
+            }
+
+            &:hover {
+              transform: translateY(-2px);
+              box-shadow: 0 10px 30px $shadow-dark;
+              cursor: pointer;
+              transition: all 0.2s;
+            }
+
+            &:active {
+              outline: none;
+              transform: translateY(0px);
+              box-shadow: 0 5px 15px $shadow-dark;
+            }
+          }
+        }
+      }
+    }
+
+    .scroll_btn {
+      @include respond(phone-lg) {
+        display: none;
+      }
+    }
+
+    .direction {
+      position: absolute;
+      background-color: $color-grey-dark-2-tranparent;
+      border-radius: 50%;
+      top: 40%;
+      border: none;
+      width: 3.5rem;
+      height: 3.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1rem;
+      color: $color-white;
+
+      &:hover {
+        transition: 0.5s;
+        // background-color: #282828;
+        background-color: $color-grey-dark-2;
+      }
+
+      &-left {
+        left: 0.3rem;
+      }
+
+      &-right {
+        right: 0.3rem;
+      }
+    }
+  }
+}
+
+
+@keyframes doubletab {
+  0% {
+    transform: scale(2);
+  }
+
+  10% {
+    transform: scale(1);
+  }
+
+  30% {
+    transform: scale(1.5);
+  }
+
+  50% {
+    transform: scale(1);
+  }
+
+  100% {
+    transform: scale(2.3);
+  }
+}

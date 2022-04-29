@@ -1,0 +1,48 @@
+/*
+0 - 600PX: Phone
+600 - 900px: Tablet  portrait
+900 - 1200px: Tablet landscspe
+[1200 - 1000px]: is where our normal styles apply
+1000px + :  Big desktop
+*/
+/*
+$breakpoint argument choices:
+-phone
+-tab-port
+-tab-land
+-big-desktop
+
+1em = 16px
+*/
+.search_results {
+  padding: 0 6rem;
+  margin-top: 1rem;
+  font-size: 2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+@media only screen and (max-width: 800px) {
+  .search_results {
+    padding: 0 2rem;
+  }
+}
+
+.search_results strong {
+  margin-left: .5rem;
+}
+
+.search .notfound {
+  padding: 0 6rem;
+  font-size: 2rem;
+  margin-top: 2.5rem;
+  color: #dc3545;
+}
+
+@media only screen and (max-width: 800px) {
+  .search .notfound {
+    padding: 2rem;
+  }
+}
+/*# sourceMappingURL=search.css.map */

@@ -1,0 +1,79 @@
+/*
+0 - 600PX: Phone
+600 - 900px: Tablet  portrait
+900 - 1200px: Tablet landscspe
+[1200 - 1000px]: is where our normal styles apply
+1000px + :  Big desktop
+*/
+/*
+$breakpoint argument choices:
+-phone
+-tab-port
+-tab-land
+-big-desktop
+
+1em = 16px
+*/
+.sidebar {
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 0;
+  position: absolute;
+  height: 100vh;
+  overflow-x: hidden;
+  opacity: 9;
+  -webkit-transition: .2s;
+  transition: .2s;
+  z-index: 999;
+}
+
+.sidebar_container {
+  position: absolute;
+  background-color: #fff;
+  width: 100%;
+  height: 100vh;
+  padding: 5rem 2rem;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  overflow: auto;
+  z-index: 999;
+}
+
+@media only screen and (max-width: 800px) {
+  .sidebar_container {
+    padding: 5rem 1.5rem;
+  }
+}
+
+.sidebar_container-closebtn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  margin-top: -2rem;
+}
+
+.sidebar_container-closebtn button {
+  border: none;
+  background-image: -webkit-gradient(linear, left top, right bottom, from(#5D05B5), to(#dc3545));
+  background-image: linear-gradient(to right bottom, #5D05B5, #dc3545);
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 10rem;
+  font-size: 2rem;
+  color: #fff;
+}
+
+.sidebar_container .saved {
+  margin-top: 3rem;
+}
+
+.sidebar_container .saved_header {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+/*# sourceMappingURL=sidebar.css.map */

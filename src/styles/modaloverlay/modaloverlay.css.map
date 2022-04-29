@@ -1,0 +1,10 @@
+{
+    "version": 3,
+    "mappings": "AAEA,AAAA,cAAc,CAAC;EACX,gBAAgB,ECCN,IAAI;EDAd,OAAO,EAAE,EAAE;EACX,QAAQ,EAAE,KAAK;EACf,GAAG,EAAE,CAAC;EACN,MAAM,EAAE,CAAC;EACT,IAAI,EAAE,CAAC;EACP,KAAK,EAAE,CAAC;EACR,MAAM,EAAE,KAAK;EACb,OAAO,EAAE,EAAE;EACX,OAAO,EAAE,IAAI;CAChB",
+    "sources": [
+        "modaloverlay.scss",
+        "../abstracts/variables/variables.scss"
+    ],
+    "names": [],
+    "file": "modaloverlay.css"
+}
