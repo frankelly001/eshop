@@ -1,24 +1,23 @@
 export const config = (userInfo, amount) => {
-    return {
-        public_key: 'FLWPUBK_TEST-e1399dbd0b80e614e77eb9000e0ba5b2-X',
-        tx_ref: Date.now(),
-        amount: amount,
-        currency: 'NGN',
-        payment_options: 'card,mobilemoney,ussd',
-        // redirect_url: "http://localhost:3000",
-        customer: {
-          email: userInfo.email,
-          phonenumber: userInfo.phone1,
-          name: `${userInfo.firstname}  ${userInfo.lastname}`,
-        },
-        customizations: {
-          title: "eShop",
-          description: 'Payment for Products Ordered & Delivery',
-          logo: 'https://its.unl.edu/images/services/icons/eShop_Icon-01.png',
-        },
-    }
-}
-
+  return {
+    public_key: process.env.REACT_APP_FLUTTERWAVE_PUBLIC_KEY,
+    tx_ref: Date.now(),
+    amount: amount,
+    currency: "NGN",
+    payment_options: "card,mobilemoney,ussd",
+    // redirect_url: "http://localhost:3000",
+    customer: {
+      email: userInfo.email,
+      phonenumber: userInfo.phone1,
+      name: `${userInfo.firstname}  ${userInfo.lastname}`,
+    },
+    customizations: {
+      title: "eShop",
+      description: "Payment for Products Ordered & Delivery",
+      logo: "https://its.unl.edu/images/services/icons/eShop_Icon-01.png",
+    },
+  };
+};
 
 // function makePayment() {
 //   FlutterwaveCheckout({
