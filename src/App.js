@@ -18,7 +18,7 @@ import { shuffle } from "./utilities/randomArr";
 import Footer from "./components/layout/Footer";
 import CheckoutInfo from "./components/CheckoutInfo";
 import CheckoutPay from "./components/CheckoutPay";
-import RenderLoader from '../src/components/layout/RenderLoader';
+import RenderLoader from "../src/components/layout/RenderLoader";
 
 const initialState = {
   cartsCount: [],
@@ -141,9 +141,6 @@ function App() {
       // whereAmISearchingFrom.include(whatAmISearching)
       return orderedID.includes(el.id);
     });
-    console.log(products);
-    console.log(orderedID);
-    console.log(orderdItems);
 
     orderdItems.map((el) => {
       return allAddToCart.map((cart) => {
