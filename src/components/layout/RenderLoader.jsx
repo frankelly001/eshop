@@ -1,23 +1,23 @@
-import React from 'react';
-import '../../styles/RenderLoader/renderloader.css'
+import React, { useContext } from "react";
+import "../../styles/RenderLoader/renderloader.css";
+import UserContext from "../userContext";
 
-const RenderLoader = ({ allData }) => {
-  // if (allData.length < 1) document.body.style.overflow = 'hidden';
-  // else document.body.style.overflow = 'unset';
+const RenderLoader = () => {
+  const { products } = useContext(UserContext);
 
-    return (
-      <>
-        {allData.length > 0 ? (
-          <div></div>
-        ) : (
-          <div className="loader">
-            <div className="loader_icon">
-              <i className="fa-solid fa-spinner" />
-            </div>
+  return (
+    <>
+      {products.length > 0 ? (
+        <div></div>
+      ) : (
+        <div className="loader">
+          <div className="loader_icon">
+            <i className="fa-solid fa-spinner" />
           </div>
-        )}
-      </>
-    );
+        </div>
+      )}
+    </>
+  );
 };
 
 export default RenderLoader;

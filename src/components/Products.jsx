@@ -1,20 +1,14 @@
-import React, { useContext, useEffect } from 'react';
-import ProductsLayout from './layout/ProductsLayout';
-import UserContext from './userContext';
-import LandingPageLayout from './layout/LandingPageLayout';
+import React, { useContext, useEffect } from "react";
+import ProductsLayout from "./layout/ProductsLayout";
+import UserContext from "./userContext";
 
 const Products = ({ products }) => {
-    const { onSelect } = useContext(UserContext)
+  const { onSelect } = useContext(UserContext);
 
-    useEffect(()=> {
-        onSelect("Home")
-    }, [])
-    return (
-      <div>
-        {/* {products.length > 0 && <LandingPageLayout />} */}
-        <ProductsLayout allProducts={products} homePage />
-      </div>
-    );
+  useEffect(() => {
+    onSelect("Home");
+  }, []);
+  return <ProductsLayout allProducts={products} homePage />;
 };
 
 export default Products;

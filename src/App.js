@@ -18,6 +18,7 @@ import { shuffle } from "./utilities/randomArr";
 import Footer from "./components/layout/Footer";
 import CheckoutInfo from "./components/CheckoutInfo";
 import CheckoutPay from "./components/CheckoutPay";
+import RenderLoader from '../src/components/layout/RenderLoader';
 
 const initialState = {
   cartsCount: [],
@@ -132,9 +133,17 @@ function App() {
 
   useEffect(() => {
     const orderedID = [...allAddToCart].map((el) => el.productId);
+    // am filtering to find if each element condition is true
     const orderdItems = [...products].filter((el) => {
+      // this will return the element that is inside orderedID array
+      // orderedID is an ARRAY, el.id is a string
+      // itemsContainer.include(iten) which means
+      // whereAmISearchingFrom.include(whatAmISearching)
       return orderedID.includes(el.id);
     });
+    console.log(products);
+    console.log(orderedID);
+    console.log(orderdItems);
 
     orderdItems.map((el) => {
       return allAddToCart.map((cart) => {
@@ -203,6 +212,7 @@ function App() {
         <ToastContainer />
         <NavBar />
         <div className="eshop_app-content">
+          <RenderLoader />
           <Routes>
             <Route path="/" element={<Products products={products} />} />
             <Route
