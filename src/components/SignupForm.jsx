@@ -7,9 +7,11 @@ import Joi from "joi";
 import passwordComplexity from "joi-password-complexity";
 import { validate, onHandleChange } from "./layout/Form";
 import { signup } from "../services/authService";
+import { useNavigate } from "react-router-dom";
 
 const SignupForm = () => {
   const [step, setStep] = useState(1);
+  const navigate = useNavigate()
   const [userData, setUserData] = useState({
     firstname: "",
     lastname: "",
@@ -128,43 +130,49 @@ const SignupForm = () => {
 
   const renderSignUpSwitch = (signupType) => {
     switch (signupType) {
-        case 1:
-          return (
-            <Signup1
-              onNext={nextStep}
-              onHandleChange={handleChange}
-              textInput={userData}
-              errors={errors}
-            />
-          );
+      case 1:
+        return (
+          <Signup1
+            onNext={nextStep}
+            onHandleChange={handleChange}
+            textInput={userData}
+            errors={errors}
+          />
+        );
 
-        case 2:
-          return (
-            <Signup2
-              onNext={nextStep}
-              onPrev={prevStep}
-              onHandleChange={handleChange}
-              textInput={userData}
-              errors={errors}
-            />
-          );
+      case 2:
+        return (
+          <Signup2
+            onNext={nextStep}
+            onPrev={prevStep}
+            onHandleChange={handleChange}
+            textInput={userData}
+            errors={errors}
+          />
+        );
 
-        case 3:
-          return (
-            <Signup3
-              onPrev={prevStep}
-              onHandleChange={handleChange}
-              textInput={userData}
-              errors={errors}
-              onHandleSubmit={handleSubmit}
-              validate={validate(schema, userData)}
-            />
-          );
-      }
-  }
+      case 3:
+        return (
+          <Signup3
+            onPrev={prevStep}
+            onHandleChange={handleChange}
+            textInput={userData}
+            errors={errors}
+            onHandleSubmit={handleSubmit}
+            validate={validate(schema, userData)}
+          />
+        );
+      default:
+        navigate("/not-found");
+    }
+  };
 
   return (
-    <AuthForm authLabel="Sign Up" authType="signup" welcomeMessage="Welcome to eShop">
+    <AuthForm
+      authLabel="Sign Up"
+      authType="signup"
+      welcomeMessage="Welcome to eShop"
+    >
       {renderSignUpSwitch(step)}
     </AuthForm>
   );
