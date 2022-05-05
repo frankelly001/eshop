@@ -3,6 +3,8 @@ import { useNavigate, useParams } from "react-router-dom";
 import ProductsLayout from "./layout/ProductsLayout";
 import "../styles/search/search.css";
 import UserContext from "./userContext";
+import AnimatedIcon from "./layout/AnimatedIcon";
+import ladypagenotfound from "../components/icons/animatedIcons/ladypagenotfound.json";
 
 const Search = ({ products }) => {
   const [filteredProducts, setfilteredProducts] = useState([]);
@@ -39,7 +41,13 @@ const Search = ({ products }) => {
       {filteredProducts && filteredProducts.length > 0 ? (
         <ProductsLayout allProducts={filteredProducts} />
       ) : (
+        <>
         <p className="notfound">No products found</p>
+
+        <div className="notfound_icon">
+          <AnimatedIcon icon={ladypagenotfound} />
+        </div>
+        </>
       )}
     </div>
   );

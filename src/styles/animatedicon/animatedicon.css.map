@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,cAAc,CAAC;EACX,SAAS,EAAE,KAAK;EAChB,UAAU,EAAE,KAAK;EACjB,UAAU,EAAE,MAAM;EAClB,UAAU,EAAE,IAAI;EAChB,aAAa,EAAE,IAAI;EACnB,OAAO,EAAE,IAAI;EACb,WAAW,EAAE,MAAM;EACnB,eAAe,EAAE,MAAM;CAC1B",
+    "sources": [
+        "animatedicon.scss"
+    ],
+    "names": [],
+    "file": "animatedicon.css"
+}

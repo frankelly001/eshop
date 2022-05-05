@@ -1,11 +1,9 @@
-import React from 'react';
+import React from "react";
+import pagenotfound from "../components/icons/animatedIcons/pagenotfound.json";
+import AnimatedIcon from "./layout/AnimatedIcon";
 
 const NotFound = () => {
-    return (
-        <div>
-            <h1>PAGE NOT FOUND</h1>
-        </div>
-    );
+  return <AnimatedIcon icon={pagenotfound} />;
 };
 
 export default NotFound;

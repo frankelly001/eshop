@@ -29,4 +29,18 @@
             padding: 2rem;
         }
     }
+
+    .notfound_icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .animated_icon {
+            margin-top: -10rem;
+
+            @include respond(phone-lg) {
+                margin-top: -8rem;
+            }
+        }
+    }
 }
