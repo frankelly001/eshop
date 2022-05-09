@@ -156,7 +156,7 @@ const CheckoutInfo = () => {
           </div>
         </div>
         <div className="checkout_info_container-2">
-          <CartContainer inactive actionBtn/>
+          <CartContainer inActiveFunc />
         </div>
       </div>
     </div>

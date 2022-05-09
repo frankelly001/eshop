@@ -177,6 +177,11 @@ $breakpoint argument choices:
   margin-bottom: 1.5rem;
 }
 
+.product_description-2_details .order_quantity h3 span {
+  color: #7c7474;
+  font-size: 1.5rem;
+}
+
 .product_description-2_details .order_quantity .add_cart {
   border: none;
   padding: 1rem;

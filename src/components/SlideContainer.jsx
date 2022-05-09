@@ -4,6 +4,7 @@ import "../styles/slidecontainer/slidecontainer.css";
 import UserContext from "./userContext";
 import { useNavigate } from "react-router-dom";
 import { formatStr } from "../utilities/formatString";
+import { usePathnameCheck } from "./usePathnameCheck";
 
 const SlideContainer = ({ products, check, turnOffSideBar }) => {
   // const [scrollWidth, setScrollWidth] = useState();
@@ -21,7 +22,8 @@ const SlideContainer = ({ products, check, turnOffSideBar }) => {
   const scroll = (scrollOffset) => {
     ref.current.scrollLeft += scrollOffset;
   };
-  // console.log(ref);
+
+  const ifCheckoutPay = usePathnameCheck("/checkout/payment")
 
   useEffect(() => {
     setTimeout(() => {
@@ -81,9 +83,9 @@ const SlideContainer = ({ products, check, turnOffSideBar }) => {
             <div className="slide_product-details">
               <h3>{product.title}</h3>
               <p>{formatToCurrency(product.price)}</p>
-              <button className="add" onClick={() => addSavetoCart(product)}>
+              {!ifCheckoutPay && <button className="add" onClick={() => addSavetoCart(product)}>
                 add to cart
-              </button>
+              </button>}
             </div>
           </li>
         ))}

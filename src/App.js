@@ -132,9 +132,9 @@ function App() {
   };
 
   useEffect(() => {
-    const orderedID = [...allAddToCart].map((el) => el.productId);
+    const orderedID = allAddToCart.map((el) => el.productId);
     // am filtering to find if each element condition is true
-    const orderdItems = [...products].filter((el) => {
+    const orderdItems = products.filter((el) => {
       // this will return the element that is inside orderedID array
       // orderedID is an ARRAY, el.id is a string
       // itemsContainer.include(iten) which means
@@ -143,13 +143,14 @@ function App() {
     });
 
     orderdItems.map((el) => {
-      return allAddToCart.map((cart) => {
+      return allAddToCart.forEach((cart) => {
         if (el.id === cart.productId) {
           el.quantity = cart.quantity;
         }
         return el;
       });
     });
+
 
     setOrdered(orderdItems);
     return function cleanUp() {};
@@ -179,6 +180,7 @@ function App() {
   return (
     <UserContext.Provider
       value={{
+        products: products,
         categories: categories,
         query: query,
         onSearch: handleQuery,
@@ -197,7 +199,6 @@ function App() {
         onSelect: handleSelect,
         selected: selected,
         onDisableSelected: disableSelected,
-        products: products,
         userDelivery,
         setUserDelivey,
         flyoutMenu,
@@ -211,19 +212,10 @@ function App() {
         <div className="eshop_app-content">
           <RenderLoader />
           <Routes>
-            <Route path="/" element={<Products products={products} />} />
-            <Route
-              path="products/:title"
-              element={<ProductDetails products={products} />}
-            />
-            <Route
-              path="allproducts/:search"
-              element={<Search products={products} />}
-            />
-            <Route
-              path="category/:category"
-              element={<Category products={products} categories={categories} />}
-            />
+            <Route path="/" element={<Products />} />
+            <Route path="products/:title" element={<ProductDetails />} />
+            <Route path="allproducts/:search" element={<Search />} />
+            <Route path="category/:category" element={<Category />} />
             <Route path="login" exact element={<LoginForm />} />
             <Route path="signup" element={<SignupForm />} />
 

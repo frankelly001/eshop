@@ -3,9 +3,9 @@ import { useNavigate, useParams } from 'react-router-dom';
 import ProductsLayout from './layout/ProductsLayout';
 import UserContext from './userContext';
 
-const Category = ({ products, categories }) => {
+const Category = () => {
     const [allProducts, setAllProducts] = useState([])
-    const { onSelect } = useContext(UserContext)
+    const { products , categories, onSelect } = useContext(UserContext)
     let { category } = useParams()
     const navigate = useNavigate()
 

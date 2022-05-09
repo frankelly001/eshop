@@ -5,7 +5,7 @@ import UserContext from '../userContext';
 import CartItemLayout from "../layout/CartItemLayout";
 
 
-const CartContainer = ({ inactive, actionBtn }) => {
+const CartContainer = ({ inActiveFunc }) => {
     const { cartSwitch, orderedNum } = useContext(UserContext);
     const navigate = useNavigate()
 
@@ -30,8 +30,7 @@ const CartContainer = ({ inactive, actionBtn }) => {
           </div>
         ) : (
           <CartItemLayout
-          inactive={inactive}
-          actionBtn={actionBtn}
+          inActiveFunc={inActiveFunc}
           />
         )}
       </div>

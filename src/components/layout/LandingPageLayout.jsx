@@ -10,8 +10,6 @@ const LandingPageLayout = () => {
     const [showMenuId, setShowMenuId] = useState("")
     const { flyoutMenu, setFlyoutMenu, curScreenWidth } = useContext(UserContext)
 
-    // console.log(showMenuId)
-
     if (flyoutMenu === true) document.body.style.overflow = 'hidden';
     else document.body.style.overflow = 'unset';
 

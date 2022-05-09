@@ -6,9 +6,9 @@ import UserContext from "./userContext";
 import AnimatedIcon from "./layout/AnimatedIcon";
 import ladypagenotfound from "../components/icons/animatedIcons/ladypagenotfound.json";
 
-const Search = ({ products }) => {
+const Search = () => {
   const [filteredProducts, setfilteredProducts] = useState([]);
-  const { onDisableSelected } = useContext(UserContext);
+  const { products, onDisableSelected } = useContext(UserContext);
   const navigate = useNavigate();
   const { search } = useParams();
 

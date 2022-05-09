@@ -3,7 +3,6 @@ import "../styles/sidebar/sidebar.css";
 import UserContext from "./userContext";
 import CartContainer from "./layout/CartContainer";
 import SlideContainer from "./SlideContainer";
-import { useLocation } from "react-router-dom";
 import ModalOverlay from "./layout/ModalOverlay";
 
 const SideBar = () => {
@@ -11,21 +10,6 @@ const SideBar = () => {
     useContext(UserContext);
 
   const likedProducts = products.filter((el) => el.like === true);
-
-  // if (sidebar === true) document.body.style.overflow = 'hidden';
-  // else document.body.style.overflow = 'unset';
-
-  // document.body.style.overflow = sidebar ? 'hidden' : 'unset';
-
-  const { pathname } = useLocation();
-  const [actionBtn, setActionBtn] = useState(true);
-
-  useEffect(() => {
-    if (pathname === "/checkout/payment") setActionBtn(false);
-    else setActionBtn(true);
-  }, [pathname]);
-
-  // const sideBarwidth = window.outerWidth > 999 ? "50%" : "90%";
 
   let sideBarwidth = () => {
     let width;
@@ -57,20 +41,18 @@ const SideBar = () => {
             <i className="fa-solid fa-times"></i>
           </button>
         </div>
-        <CartContainer actionBtn={actionBtn} />
+        <CartContainer/>
         {likedProducts.length > 0 && (
           <div className="saved">
             <h3 className="saved_header">
               Saved item
               {likedProducts.length > 1 && `s (${likedProducts.length})`}
             </h3>
-            {actionBtn && (
               <SlideContainer
                 products={likedProducts}
                 check={sidebar}
                 turnOffSideBar
               />
-            )}
           </div>
         )}
       </div>

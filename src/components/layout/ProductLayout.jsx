@@ -6,71 +6,71 @@ import { formatToCurrency } from "../../utilities/formatToCurr";
 import LikeBtn from "./LikeBtn";
 import SlideContainer from "../SlideContainer";
 import { starRating } from "../../utilities/starRating";
-import ReactImageMagnify from '@blacklab/react-image-magnify';
-
+import ReactImageMagnify from "@blacklab/react-image-magnify";
 
 const ProductLayout = ({ product }) => {
-  const { dispatch, products, curScreenWidth } = useContext(UserContext);
-  const [value, setValue] = useState(null);
+  const { dispatch, products, allAddToCart, curScreenWidth } = useContext(UserContext);
+  const [value, setValue] = useState(1);
+  const [resetVal, setResetVal] = useState(false);
 
-  const inputref = (val) => {
+  const getValue = (val) => {
     setValue(val);
   };
 
-  // const addToCart = (obj) => {
-  //   // if (value < 1) setValue(1)
-  //   dispatch(obj);
-  // };
+  const quantityOrdered = allAddToCart.filter(el => el.productId === product.id ?el.quantity : null)[0]?.quantity
 
   const productCategogies = products.filter(
     (el) => el.category === product.category && el.id !== product.id
   );
-  // console.log(product);
 
   return (
     <div key={product.id} className="product">
       <div className="product_description">
         <div className="product_description-1">
           <div className="product_description-1_img">
-            {curScreenWidth <= 800 && <img src={product.image} alt={product.title} />}
-            {curScreenWidth > 800 && <ReactImageMagnify
-              imageProps={{
-                alt: product.title,
-                src: product.image,
-                height: "36vw",
-                width: "36vw",
-              }}
-              magnifiedImageProps={{
-                height: 1000,
-                src: product.image,
-                width: 1000,
-              }}
-              magnifyContainerProps={{
-                height: "100%",
-                width: "120%",
-              }}
-              onActivationChanged={function noRefCheck() {}}
-              onDetectedEnvironmentChanged={function noRefCheck() {}}
-              onPositionChanged={function noRefCheck() {}}
-              portalProps={{
-                horizontalOffset: 10,
-                id: "portal-test-id",
-              }}
-            />}
+            {curScreenWidth <= 800 && (
+              <img src={product.image} alt={product.title} />
+            )}
+            {curScreenWidth > 800 && (
+              <ReactImageMagnify
+                imageProps={{
+                  alt: product.title,
+                  src: product.image,
+                  height: "36vw",
+                  width: "36vw",
+                }}
+                magnifiedImageProps={{
+                  height: 1000,
+                  src: product.image,
+                  width: 1000,
+                }}
+                magnifyContainerProps={{
+                  height: "100%",
+                  width: "120%",
+                }}
+                onActivationChanged={function noRefCheck() {}}
+                onDetectedEnvironmentChanged={function noRefCheck() {}}
+                onPositionChanged={function noRefCheck() {}}
+                portalProps={{
+                  horizontalOffset: 10,
+                  id: "portal-test-id",
+                }}
+              />
+            )}
           </div>
 
-          {curScreenWidth > 800 && <div className="product_categories">
-            <h3 className="product_categories-header">Related products</h3>
-            <SlideContainer products={productCategogies} />
-          </div>}
+          {curScreenWidth > 800 && (
+            <div className="product_categories">
+              <h3 className="product_categories-header">Related products</h3>
+              <SlideContainer products={productCategogies} />
+            </div>
+          )}
         </div>
 
         <div className="product_description-2">
           <div className="product_description-2_details">
             <h3 className="product_title">{product.title}</h3>
-            <p className="product_price">
-              {formatToCurrency(product.price)}
-            </p>
+            <p className="product_price">{formatToCurrency(product.price)}</p>
             <div className="product_rating">
               <div className="rate_icon">
                 {product.rating &&
@@ -85,17 +85,25 @@ const ProductLayout = ({ product }) => {
               <p>Save for later</p>
             </div>
             <div className="order_quantity">
-              <h3>Quantity</h3>
-              <PlusMinusBtn onInputref={inputref} />
+              <h3>
+                Quantity{" "}
+                {quantityOrdered && <span>(Ordered: {quantityOrdered})</span>}
+              </h3>
+              <PlusMinusBtn
+                resetVal={resetVal}
+                onSetResetVal={setResetVal}
+                getValue={getValue}
+              />
               <button
                 className="add_cart"
-                onClick={() =>
+                onClick={() => {
                   dispatch({
                     type: "addToCart",
                     id: product.id,
                     payload: value < 1 ? 1 : value,
-                  })
-                }
+                  });
+                  setResetVal(true);
+                }}
               >
                 Add to cart
               </button>
@@ -108,11 +116,12 @@ const ProductLayout = ({ product }) => {
         </div>
       </div>
 
-      {curScreenWidth <= 800 &&
-      <div className="product_categories">
-      <h3 className="product_categories-header">Related products</h3>
-      <SlideContainer products={productCategogies} />
-    </div>}
+      {curScreenWidth <= 800 && (
+        <div className="product_categories">
+          <h3 className="product_categories-header">Related products</h3>
+          <SlideContainer products={productCategogies} />
+        </div>
+      )}
     </div>
   );
 };

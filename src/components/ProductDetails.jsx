@@ -1,12 +1,14 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { formatStr } from "../utilities/formatString";
 import ProductLayout from "./layout/ProductLayout";
+import UserContext from "./userContext";
 
-const ProductDetails = ({ products }) => {
+const ProductDetails = () => {
   let [product, setProduct] = useState({});
   let { title } = useParams();
   const navigate = useNavigate();
+  const { products } = useContext(UserContext);
 
   useEffect(() => {
     // let productObj = products.length > 0 ? products.filter(product => product.title.replace(/[^A-Z0-9]/ig, "") == title.replace(/[^A-Z0-9]/ig, ""))[0] : {}
@@ -33,6 +35,8 @@ const ProductDetails = ({ products }) => {
   //     console.log('not yet uploaded')
   // }
   // console.log(title)
+
+  // console.log(product, products);
 
   return <ProductLayout product={product} />;
 };

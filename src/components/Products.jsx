@@ -2,8 +2,8 @@ import React, { useContext, useEffect } from "react";
 import ProductsLayout from "./layout/ProductsLayout";
 import UserContext from "./userContext";
 
-const Products = ({ products }) => {
-  const { onSelect } = useContext(UserContext);
+const Products = () => {
+  const { onSelect, products } = useContext(UserContext);
 
   useEffect(() => {
     onSelect("Home");
