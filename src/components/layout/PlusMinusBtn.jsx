@@ -18,12 +18,12 @@ const PlusMinusBtn = ({
 
   const handleChange = (e) => {
     const inputVal = e.currentTarget.value;
-    setVal(inputVal);
+    setVal(inputVal ? parseInt(inputVal) : inputVal);
     if (dispatchInput) dispatch({ ...dispatchInput, payload: inputVal });
   };
 
   const add = () => {
-    setVal(val + 1);
+    setVal(parseInt(val + 1));
     if (dispatchAdd) dispatch(dispatchAdd);
   };
 
@@ -52,7 +52,7 @@ const PlusMinusBtn = ({
 
   const button = (size) => {
     // return {padding: size === "small" ? ".5rem" : "1.5rem"}
-    return { padding: size === "small" && ".5rem" };
+    return { padding: size === "small" && ".5rem"};
   };
 
   const input = (size) => {

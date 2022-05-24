@@ -34,13 +34,10 @@ $breakpoint argument choices:
 .plus_minus-btn input {
   width: 100%;
   border: none;
-  border: solid .3rem;
-  -o-border-image: linear-gradient(#5D05B5, #dc3545) 27;
-     border-image: -webkit-gradient(linear, left top, left bottom, from(#5D05B5), to(#dc3545)) 27;
-     border-image: linear-gradient(#5D05B5, #dc3545) 27;
   text-align: center;
   outline: none;
   padding: .9rem;
+  background-color: #F4F2F4;
   font-size: 2rem;
 }
 
