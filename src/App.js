@@ -19,6 +19,7 @@ import Footer from "./components/layout/Footer";
 import CheckoutInfo from "./components/CheckoutInfo";
 import CheckoutPay from "./components/CheckoutPay";
 import RenderLoader from "../src/components/layout/RenderLoader";
+import PrivacyPolicy from "./components/PrivacyPolicy";
 
 const initialState = {
   cartsCount: [],
@@ -151,7 +152,6 @@ function App() {
       });
     });
 
-
     setOrdered(orderdItems);
     return function cleanUp() {};
   }, [allAddToCart, products]);
@@ -218,6 +218,7 @@ function App() {
             <Route path="category/:category" element={<Category />} />
             <Route path="login" exact element={<LoginForm />} />
             <Route path="signup" element={<SignupForm />} />
+            <Route path="privacy-policy" element={<PrivacyPolicy />} />
 
             <Route path="checkout">
               <Route index element={<Navigate replace to="information" />} />
