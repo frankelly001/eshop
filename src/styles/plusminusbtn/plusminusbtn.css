@@ -15,37 +15,28 @@ $breakpoint argument choices:
 1em = 16px
 */
 .plus_minus-btn {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
 }
-
 .plus_minus-btn button {
   border: none;
   color: #fff;
-  background-image: -webkit-gradient(linear, left top, right bottom, from(#5D05B5), to(#dc3545));
   background-image: linear-gradient(to right bottom, #5D05B5, #dc3545);
   padding: 1.5rem;
-  display: -ms-grid;
   display: grid;
   place-items: center;
 }
-
 .plus_minus-btn input {
   width: 100%;
   border: none;
   text-align: center;
   outline: none;
-  padding: .9rem;
+  padding: 0.9rem;
   background-color: #F4F2F4;
   font-size: 2rem;
 }
-
 .plus_minus-btn .remove {
   border-radius: 2rem 0 0 2rem;
 }
-
 .plus_minus-btn .add {
   border-radius: 0 2rem 2rem 0;
-}
-/*# sourceMappingURL=plusminusbtn.css.map */
+}/*# sourceMappingURL=plusminusbtn.css.map */

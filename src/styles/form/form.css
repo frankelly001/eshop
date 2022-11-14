@@ -18,33 +18,21 @@ $breakpoint argument choices:
   margin-top: auto;
   margin-bottom: auto;
   padding: 3rem 5rem;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }
-
 @media only screen and (max-width: 800px) {
   .form {
     padding: 0;
   }
 }
-
 .form_welcome {
   text-align: center;
   font-size: 1.5rem;
   color: #616161;
 }
-
 .form_warning {
   text-align: center;
   font-size: 1.3rem;
@@ -52,89 +40,53 @@ $breakpoint argument choices:
   margin-bottom: 2rem;
   font-weight: 700;
 }
-
 .form-body {
   padding: 5rem 1rem;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-flow: row wrap;
-          flex-flow: row wrap;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  flex-flow: row wrap;
   width: 40%;
 }
-
 .form-body div:not(:last-child) {
   margin-bottom: 3rem;
 }
-
 @media only screen and (max-width: 1200px) {
   .form-body {
     width: 50%;
   }
 }
-
 @media only screen and (max-width: 800px) {
   .form-body {
     width: 70%;
   }
 }
-
 @media only screen and (max-width: 600px) {
   .form-body {
     width: 90%;
   }
 }
-
 .form-body .auth_header {
   margin-bottom: 6rem;
   font-size: 2.5rem;
 }
-
 .form-body_details {
   width: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-flow: row wrap;
-          flex-flow: row wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-flow: row wrap;
 }
-
 .form-body_details .form_input {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  flex-direction: column;
+  align-items: center;
   position: relative;
 }
-
 .form-body_details .form_input:not(:last-child) {
   margin-bottom: 3rem;
 }
-
 .form-body_details .form_input-field {
   padding: 0.74rem 2rem;
   border: none;
@@ -143,12 +95,9 @@ $breakpoint argument choices:
   font-size: 1.8rem;
   background-color: #e5e5e5;
   outline: none;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   line-height: 1.5;
 }
-
 .form-body_details .form_input i {
   position: absolute;
   top: 1rem;
@@ -157,7 +106,6 @@ $breakpoint argument choices:
   color: #616161;
   cursor: pointer;
 }
-
 .form-body_details .form_input .alert_error {
   padding: 0 2rem;
   font-size: 1.3rem;
@@ -167,28 +115,19 @@ $breakpoint argument choices:
   width: 95%;
   text-align: center;
   border-radius: 0 0 1rem 1.5rem;
-  -webkit-transition: all 0.5s ease-in-out;
   transition: all 0.5s ease-in-out;
 }
-
 .form-body .form_action-btn {
   width: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  justify-content: center;
 }
-
 .form-body .form_action-btn .form_btn {
   padding: 1rem;
   border: none;
   border-radius: 2rem;
-  background-image: -webkit-gradient(linear, left top, right bottom, from(#5D05B5), to(#dc3545));
   background-image: linear-gradient(to right bottom, #5D05B5, #dc3545);
-  -ms-grid-column-align: center;
-      justify-self: center;
+  justify-self: center;
   font-size: 1.5rem;
   font-weight: 600;
   line-height: 1.5;
@@ -197,26 +136,20 @@ $breakpoint argument choices:
   min-width: fit-content;
   color: #fff;
 }
-
 .form-body .form_action-btn .form_btn:not(:last-child) {
   margin-right: 1rem;
 }
-
 .form-body .form_action-btn .disable {
-  background-image: -webkit-gradient(linear, left top, right bottom, from(#5d05b5a2), to(#dc3545a2));
-  background-image: linear-gradient(to right bottom, #5d05b5a2, #dc3545a2);
+  background-image: linear-gradient(to right bottom, rgba(93, 5, 181, 0.6352941176), rgba(220, 53, 69, 0.6352941176));
 }
-
 .form-body .login-signup {
   width: 100%;
   text-align: center;
 }
-
 .form-body .login-signup p {
   font-size: 1.5rem;
   color: #616161;
 }
-
 .form-body .login-signup a {
   text-decoration: none;
   font-size: 1.5rem;
@@ -224,5 +157,4 @@ $breakpoint argument choices:
   display: inline-block;
   border-radius: 2rem;
   color: #b5057a;
-}
-/*# sourceMappingURL=form.css.map */
+}/*# sourceMappingURL=form.css.map */

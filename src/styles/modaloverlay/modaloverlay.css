@@ -1,6 +1,6 @@
 .modal-overlay {
   background-color: #000;
-  opacity: .5;
+  opacity: 0.5;
   position: fixed;
   top: 0;
   bottom: 0;
@@ -9,5 +9,4 @@
   height: 100vh;
   z-index: 99;
   display: none;
-}
-/*# sourceMappingURL=modaloverlay.css.map */
+}/*# sourceMappingURL=modaloverlay.css.map */

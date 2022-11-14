@@ -15,15 +15,9 @@ $breakpoint argument choices:
 1em = 16px
 */
 .loader {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  align-items: center;
+  justify-content: center;
   background-color: #fff;
   position: fixed;
   top: 0;
@@ -35,7 +29,6 @@ $breakpoint argument choices:
   padding: 0;
   z-index: 50;
 }
-
 .loader i {
   font-size: 5rem;
   margin-top: 10rem;
@@ -46,23 +39,18 @@ $breakpoint argument choices:
 
 @-webkit-keyframes rotate {
   0% {
-    -webkit-transform: rotate(0);
-            transform: rotate(0);
+    transform: rotate(0);
   }
   100% {
-    -webkit-transform: rotate(360deg);
-            transform: rotate(360deg);
+    transform: rotate(360deg);
   }
 }
 
 @keyframes rotate {
   0% {
-    -webkit-transform: rotate(0);
-            transform: rotate(0);
+    transform: rotate(0);
   }
   100% {
-    -webkit-transform: rotate(360deg);
-            transform: rotate(360deg);
+    transform: rotate(360deg);
   }
-}
-/*# sourceMappingURL=renderloader.css.map */
+}/*# sourceMappingURL=renderloader.css.map */

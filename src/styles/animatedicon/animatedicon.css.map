@@ -1,9 +1,1 @@
-{
-    "version": 3,
-    "mappings": "AAAA,AAAA,cAAc,CAAC;EACX,SAAS,EAAE,KAAK;EAChB,UAAU,EAAE,KAAK;EACjB,UAAU,EAAE,MAAM;EAClB,UAAU,EAAE,IAAI;EAChB,aAAa,EAAE,IAAI;EACnB,OAAO,EAAE,IAAI;EACb,WAAW,EAAE,MAAM;EACnB,eAAe,EAAE,MAAM;CAC1B",
-    "sources": [
-        "animatedicon.scss"
-    ],
-    "names": [],
-    "file": "animatedicon.css"
-}
+{"version":3,"sources":["animatedicon.scss","animatedicon.css"],"names":[],"mappings":"AAAA;EACI,gBAAA;EACA,iBAAA;EACA,kBAAA;EACA,gBAAA;EACA,mBAAA;EACA,aAAA;EACA,mBAAA;EACA,uBAAA;ACCJ","file":"animatedicon.css"}
